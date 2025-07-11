@@ -1,0 +1,34 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "React training",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dimple96-web/React.git"
+  },
+  "keywords": [
+    "react",
+    "training"
+  ],
+  "author": "Dimple Achappa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dimple96-web/React/issues"
+  },
+  "homepage": "https://github.com/Dimple96-web/React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
