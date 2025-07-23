@@ -68,3 +68,26 @@ When we execute a JS code a window object is created and the keyword "this" is u
 this === window (always true)
 
 # Undefined vs not defined in JS
+
+1. Even before a variable is assigned value 7, variable a is given a memory space and given as undefined.
+2. Undefined is not empty, its just a place holder. We can assign value to it anytime in the code.
+3. Javascript is a loosly coupled programming language. Can assign any type of data to a variable (Weakly typed language).
+4. Dont do "a = undefined".
+
+# The Scope Chain, Scope and Lexical Environment
+
+Scope - Where we access a spsecific variable or a function.
+Scope is directly dependent of the lexical environment.
+Lexical environment - Is a local memery along with the reference to lexical environment of its parent. (lexical - in a sequence/order)
+Variable is search in local environment and then also checked in global environment, this is known as scope chain.
+Example: c has access to "a function" and "global", "a function" has access to "global", "global" has access to null.
+
+# let and const in JS, Temporal Dead Zone
+
+1. let and const declarations are hoisted.
+2. If a variable is declared let we cannot use it without intialization, it will give us error.
+3. let and const also are also allocated space but cannot use them like var.
+4. Temporal Dead Zone - time between when a variable is declared using let or const, and when it is initialized (assigned a value)
+5. let and const variable cannot be accessed using the window or this object.
+
+# Block Scope and Shadowing in JS

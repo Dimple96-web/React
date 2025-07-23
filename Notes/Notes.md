@@ -2,6 +2,8 @@
 
 ## Using just javascript inside a HTML file
 
+Below functions are already present in the browser. (Ex: createElement, getElementById)
+
 <pre>
 <script>
     const heading = document.createElement('h1');
@@ -40,6 +42,12 @@ With a CDN: Static files (like JavaScript, CSS, images) are served from a nearby
 
 ## React code inside HTML
 
+1. The <script crossorigin> attribute is used in HTML to specify how the browser should handle cross-origin requests for the script. It is typically used when loading scripts from external sources (e.g., CDNs) and is relevant for security and resource sharing.
+2. If omitted, the browser's default behavior is to fetch the script without credentials.
+3. The crossorigin attribute is present, but it does not explicitly specify a value. When the crossorigin attribute is included without a value, it defaults to "anonymous".
+
+ReactDOM is used for DOM operations.
+
 <pre>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 
@@ -53,6 +61,10 @@ With a CDN: Static files (like JavaScript, CSS, images) are served from a nearby
 </pre>
 
 # Ep - 01, Part - 03
+
+<pre>
+<link rel="stylesheet" href="./index.css" />
+</pre>
 
 React elements is just a javascript object
 Render converts the javascript object to h1 tag and putting it on the screen that the browser understands (as a HTML).
@@ -97,7 +109,7 @@ The order of script tags is important and should be kept in mind. Should always 
 
 If the root is already have any tags first that is rendered on the screen. When the root.render is called the old tags are replaced (not appended) with the new tags.
 
-We can use React in any small piece of the code. Thats why its a library and not a framework.
+We can use React in any small piece of the code. Thats why its a library and not a framework (which comes with all loads of stuffs).
 Example: We render only at the root what data we want to show
 
 # Ep - 02, Part - 01
@@ -132,14 +144,16 @@ Think of GitHub as a social coding platform where you can share your Git reposit
 
 Here we are going to learn how to build a React app from scratch, and not just by running some create react app commands.
 
-Not just React makes our app fast but, lot of other packages that support react to make our app fast. We need to install these packages through npm.
+Not just React makes our app fast but, lot of other packages that support react to make our app fast (production ready app). We need to install these packages through npm.
 
 ## NPM
+
+To create a project with npm in it use the command "npm init".
 
 Manages packages (not Node Package Manager). Standard repository from where packages are downloaded.
 
 package.json is a configuration for npm. Declares the dependencies your project needs to work.
-package-lock.json will track the excat version of packages used. Ensures consistent installs across machines/environments.
+package-lock.json will track the exacat version of packages used. Ensures consistent installs across machines/environments.
 While the package is installed there are 2 symbols. Always better to keep a minor version change.
 
 1. ^ - Updates if there is any minor version change.
@@ -152,7 +166,7 @@ There are 2 types of dependences that we can install.
 
 The packages we are going to install is.
 
-1. Bundler(webpack, parcel, vite) - To provide neat and clean code, bundled and sent to production. Parcel as a project has its own dependencies, this is known as transtitive dependencies. Hence node_modules has so many packages when we just install parcel.
+1. Bundler(webpack, parcel, vite) - To provide neat and clean code, bundled and sent to production. Parcel as a project has its own dependencies, this is known as transtitive dependencies (kind of dependency tree). Hence node_modules has so many packages when we just install parcel.
 
 # Ep - 02, Part - 02
 
@@ -1155,3 +1169,32 @@ root.render(<AppLayout />);
 </pre>
 
 # Ep - 05, Part - 01
+
+Dont keep hard coded data in componenets.
+Example: JSON, URLs, Strings
+Keep it in seperate files like config.js, constants.js
+There are 2 types of export
+
+1. Default export - In one file this can be written only once.
+   export default Component
+   import Body from "./components/Body";
+2. Named export
+   export { CDN_URL };
+   import { CDN_URL } from "../utils/contants";
+
+Yes, you can use both default export and named exports in the same file — but with a few important points to understand.
+Restructure the code as u like and keep the code in the files very simple.
+
+# Ep - 05, Part - 02
+
+Lets make our website dynamic. Till now its dynamic.
+Event Handlers
+React is fast in DOM manipulation.
+Without state if we directly manipulate the array variable then it wont work as expected. This should be done using the state variable.
+
+1. For creating state variable we use hooks.
+2. React hook is a normal JS utility function is given to us by react, that function has some logic inside it.
+3. Written inside the React package.
+4. useState() - super powerful state variable in react and useEffect() are the 2 most important hook used too much.
+5. Should import these hooks a names imports.
+6. This manitains the state of Component.
