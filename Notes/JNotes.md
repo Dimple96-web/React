@@ -52,7 +52,7 @@ If the function is an arrow function then that also is treated as a variable and
       x:10
       console will search for x in local memory space
 
-   New execution context for function a
+   New execution context for function b
 
    1. Memery component
       x: undefined
@@ -64,6 +64,8 @@ Control goes back to global scope and the x in the local memory is 1.
 
 # Window and this keyword
 
+Window is a global object created along with the global execution context and a this variable is created.
+Everything we see at the top level which is not inside a function is in the global space. 
 When we execute a JS code a window object is created and the keyword "this" is used to point to the created window (in browsers).
 this === window (always true)
 

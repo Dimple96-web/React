@@ -172,21 +172,21 @@ The packages we are going to install is.
 
 Commands used to ignit the app
 
-1. npx parcel index.html - creates a server and host our code into it.
+1. npx parcel index.html - creates a server and host our code into it. npm parcel build index.html - this is used for production build.
    npm - Installs packages (Node.js modules) to your project or globally.
    npx - Executes Node packages without permanently installing them.
    Parcel
    a. Dev Build
    b. Local Server
-   c. HMR - Hot Module Replacement (Automatic refresh)
+   c. HMR - Hot Module Replacement (Automatic refresh on saving the file).
    d. Uses a file watching algorithm (written in C++)
    e. Caching - Faster Builds
    f. Image optimization
    g. Minification of files
    h. Bundling
    i. Compressing
-   j. Consistent Hashing
-   k. Code splitting
+   j. Consistent Hashing (Parcel uses content-based hashing (often called "content hash" or "content fingerprinting") for things like:Output filenames (e.g. app.ab12cd34.js), Cache storage (for faster rebuilds, Dependency graph tracking))
+   k. Code splitting (Split files)
    l. Differential Bundling - Support older browsers, different bundling for different types of browsers.
    m. Diagnostics
    n. Error Handling
@@ -199,7 +199,12 @@ Commands used to ignit the app
    c. Remove the CDN from the html file and add this code to use react
    import React from "react";
    import ReactDOM from "react-dom";
-   d. In the script tag use the key type="module" to fix the import/export issue. Add a key to each react elements to solve the key error.
+   d. In the script tag use the key type="module" to fix the import/export issue (it treates App.js as a browser scripts, hence we need to tell it as module). Add a key to each react elements to solve the key error.
+
+3. Can make our app compitable for any versions of the browser. in the package.json we can give the below error.
+   "browserslist": [
+   "last 2 versions"
+   ]
 
 # Ep - 03, Part - 01
 
@@ -219,19 +224,19 @@ Creating a nested structures in the old react was very difficult. So they create
 We can build react without JSX, but JSX makes the developer life easier.
 Javascript + HTML = JSX (HTML like syntax)
 Ex: const script = <h1>Dimple is here</h1>
-Javascript does not understand JSX, but onlt ECMA script and the browser also does not understand this.
-Behind this secene parcel(internally babel) transpiles this code that the react/browser understands.
-JSX => React.createElement (React element) => JS Object => HTML element (render)
+Javascript does not understand JSX, but only ECMAScript and the browser also does not understand this.
+Behind this scene parcel(internally babel) transpiles this code that the react/browser understands.
+Babel does this internally - JSX => React.createElement (React element) => JS Object => HTML element (render)
 Babel converts JSX to React.createElement code - Transpiler
 
-Is JSX we can use className and not class(in HTML). In JSX we have to use camel case for attributes.
+In JSX we can use className and not class(in HTML). In JSX we have to use camel case for attributes.
 If we write the JSX in multiple lines then the JSX should be put inside a () brackets.
 
 # Ep - 03, Part - 04
 
 React components
 Everything in React is a component. Its just a normal javascript function. It just returns a JSX code or React element.
-Component Composition - Putting a component inside and another component.
+Component Composition - Putting a component inside another component.
 
 <pre>
 const Title = () => {
@@ -248,13 +253,19 @@ const Heading = () => (
 root.render(<Heading />);
 </pre>
 
-1. Class based componenet - old way
-2. Functional component - new way
+1. Class based componenet - old way of writing code
+2. Functional component - new way of writing code
 
 # Ep - 03, Part - 05
 
 In a JSX code we can write javascript inside a {} and we can execute it.
-If malicious data is passed inside {} in JSX, React escapes it by default to protect against cross-site scripting (XSS) vulnerabilities.
+If malicious data is passed inside {} in JSX, JSX escapes it by default (kind of santizises the data) to protect against cross-site scripting (XSS) vulnerabilities (Injection error).
+
+<pre>
+<Title /> can also be written as <Title></Title>
+It can also be called as {Title()}
+All the above 3 are one and the same.
+</pre>
 
 <pre>
 const title = (
