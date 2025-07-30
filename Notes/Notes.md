@@ -349,7 +349,7 @@ const RestaurantCard = () => {
         className="res-image"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQynKAtD1jF4MElJGeQiXp9IxgDkrY8Z7tKA&s"
       />
-      <h3>Food Name</h3>
+      <h3>Restaurant Name</h3>
       <h4>Briyani, North Indian, Asian</h4>
       <h4>4.4 stars</h4>
       <h4>38 minutes</h4>
@@ -389,7 +389,7 @@ Props that we can pass to a components.
 They are noraml arguments to a function.
 Props is just a javascript object and they should be used inside {} brackets.
 
-Config Driven UI - Decide how the config looks like based on the data coming from the backend.
+Config Driven UI - Decide how the config looks like based on the data coming from the backend (API).
 
 Best practices for writing the code
 

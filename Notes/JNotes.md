@@ -65,7 +65,7 @@ Control goes back to global scope and the x in the local memory is 1.
 # Window and this keyword
 
 Window is a global object created along with the global execution context and a this variable is created.
-Everything we see at the top level which is not inside a function is in the global space. 
+Everything we see at the top level which is not inside a function is in the global space.
 When we execute a JS code a window object is created and the keyword "this" is used to point to the created window (in browsers).
 this === window (always true)
 
@@ -73,8 +73,8 @@ this === window (always true)
 
 1. Even before a variable is assigned value 7, variable a is given a memory space and given as undefined.
 2. Undefined is not empty, its just a place holder. We can assign value to it anytime in the code.
-3. Javascript is a loosly coupled programming language. Can assign any type of data to a variable (Weakly typed language).
-4. Dont do "a = undefined".
+3. Javascript is a loosly typed programming language. Can assign any type of data to a variable (Weakly typed language).
+4. Dont do "a = undefined". Not a good practice.
 
 # The Scope Chain, Scope and Lexical Environment
 
