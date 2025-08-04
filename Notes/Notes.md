@@ -389,7 +389,7 @@ Props that we can pass to a components.
 They are noraml arguments to a function.
 Props is just a javascript object and they should be used inside {} brackets.
 
-Config Driven UI - Decide how the config looks like based on the data coming from the backend (API).
+Config Driven UI - Decide how the config (UI) looks like based on the data coming from the backend (API).
 
 Best practices for writing the code
 

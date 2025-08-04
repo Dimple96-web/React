@@ -78,10 +78,10 @@ this === window (always true)
 
 # The Scope Chain, Scope and Lexical Environment
 
-Scope - Where we access a spsecific variable or a function.
+Scope - Where we access a specific variable or a function.
 Scope is directly dependent of the lexical environment.
 Lexical environment - Is a local memery along with the reference to lexical environment of its parent. (lexical - in a sequence/order)
-Variable is search in local environment and then also checked in global environment, this is known as scope chain.
+Variable will search in local environment and then also checked in global environment, this is known as scope chain.
 Example: c has access to "a function" and "global", "a function" has access to "global", "global" has access to null.
 
 # let and const in JS, Temporal Dead Zone
