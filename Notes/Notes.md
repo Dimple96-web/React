@@ -393,13 +393,13 @@ Config Driven UI - Decide how the config (UI) looks like based on the data comin
 
 Best practices for writing the code
 
-1. Destructure the data which comes in the form of props.
+1. Destructure the data which comes in the form of props. Optional chaining.
 2. Write loop and use the RestaurantCard once.
 3. Each property in the array should have unique key property. Should always give a key.
    a. This key is for the DOM to understand when we have put in a new card comes into picture.
    b. If we give key then the DOM understands where to add the card and just renders only that card.
    c. Good for the performance imporving.
-   d. Dont take react index as a key. When we dont have a unique id then we can use index as an idea, but its not recommended.
+   d. Dont use map index as a key (it is an anti-pattern). When we dont have a unique id then we can use index as an idea, but its not recommended.
 
 <pre>
 import React from "react";
