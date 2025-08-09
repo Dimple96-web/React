@@ -93,3 +93,15 @@ Example: c has access to "a function" and "global", "a function" has access to "
 5. let and const variable cannot be accessed using the window or this object.
 
 # Block Scope and Shadowing in JS
+
+Block Scope
+Block is defined by curly braces {} - Compound Statement, multiple js statements into a group. Whatever is inside it and can be accessed inside it is considered as block scope.
+Ex: As we use curly braces in a if statement.
+
+Shadowing
+Refers to a situation where a variable declared within a certain scope (like a function or block) has the same name as a variable declared in an outer scope. The inner variable "shadows" the outer one, meaning that within that inner scope, only the inner variable is accessible — the outer one becomes temporarily inaccessible.
+
+Illegal shadowing
+Occurs when a variable is declared with a let or const in a way that conflicts with a variable declared with var in an outer scope. This only happens in certain block scopes due to differences in how var, let, and const work.
+
+# Closures

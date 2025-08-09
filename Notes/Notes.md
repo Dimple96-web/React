@@ -1181,6 +1181,9 @@ root.render(<AppLayout />);
 
 # Ep - 05, Part - 01
 
+Whatever we wrote in React can also be done using HTML and CSS.
+Keep each component as a seperate file (Good practice).
+We can give .js or .jsx extension for a component file. Anything will work fine.
 Dont keep hard coded data in componenets.
 Example: JSON, URLs, Strings
 Keep it in seperate files like config.js, constants.js
@@ -1188,8 +1191,8 @@ There are 2 types of export
 
 1. Default export - In one file this can be written only once.
    export default Component
-   import Body from "./components/Body";
-2. Named export
+   import Component from "./Components/ComponentName";
+2. Named export - Can be used when multiple exports should be done.
    export { CDN_URL };
    import { CDN_URL } from "../utils/contants";
 
@@ -1198,7 +1201,7 @@ Restructure the code as u like and keep the code in the files very simple.
 
 # Ep - 05, Part - 02
 
-Lets make our website dynamic. Till now its dynamic.
+Lets make our website dynamic. Till now its static.
 Event Handlers
 React is fast in DOM manipulation.
 Without state if we directly manipulate the array variable then it wont work as expected. This should be done using the state variable.
