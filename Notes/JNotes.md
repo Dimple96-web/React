@@ -105,3 +105,19 @@ Illegal shadowing
 Occurs when a variable is declared with a let or const in a way that conflicts with a variable declared with var in an outer scope. This only happens in certain block scopes due to differences in how var, let, and const work.
 
 # Closures
+
+Accessing the lexical environment is closure.
+A function bind together with its lexical environment is called a closure.
+In javascript we can pass a function inside another function and we can return a function too.
+Even if the functions are returned it remembers the lexical scope (it remembers the entire closure and returns it).
+Reference to the variable is returned and not the value of the variable.
+
+Uses of Closures
+1. Module Design Pattern
+2. Currying
+3. Functions like once
+4. memoize
+5. maintaining stat in async world
+6. setTimeouts
+7. Iterators
+

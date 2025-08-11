@@ -1206,6 +1206,7 @@ Event Handlers
 React is fast in DOM manipulation.
 Without state if we directly manipulate the array variable then it wont work as expected. This should be done using the state variable.
 
+
 1. For creating state variable we use hooks.
 2. React hook is a normal JS utility function is given to us by react, that function has some logic inside it.
 3. Written inside the React package.
