@@ -1205,11 +1205,21 @@ Lets make our website dynamic. Till now its static.
 Event Handlers
 React is fast in DOM manipulation.
 Without state if we directly manipulate the array variable then it wont work as expected. This should be done using the state variable.
-
+React is fast because of DOM manipulation.
 
 1. For creating state variable we use hooks.
 2. React hook is a normal JS utility function is given to us by react, that function has some logic inside it.
 3. Written inside the React package.
 4. useState() - super powerful state variable in react and useEffect() are the 2 most important hook used too much.
-5. Should import these hooks a names imports.
+5. Should import these hooks as named imports.
 6. This manitains the state of Component.
+7. Whenever the state variable changes React will re-render the component. React is fast because of DOM manipulation. Keeps data layer in-sync with the UI layer.
+
+## Reconcilation Algorithm - React Fiber - React 16
+
+Find the diff and update the DOM.
+When the UI is rendered actual DOM is created and along with that virtual DOM (Representation of the actual DOM) is created.
+Diff algorithm - Finds the difference between 2 virtual DOMs (basically objects). Calculate the difference and then updates the actual DOM.
+React does efficient DOM manipulation, its why React is fast.
+
+# Ep - 06, Part - 01

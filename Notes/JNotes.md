@@ -113,6 +113,7 @@ Even if the functions are returned it remembers the lexical scope (it remembers 
 Reference to the variable is returned and not the value of the variable.
 
 Uses of Closures
+
 1. Module Design Pattern
 2. Currying
 3. Functions like once
@@ -121,3 +122,15 @@ Uses of Closures
 6. setTimeouts
 7. Iterators
 
+# setTimeout and Closures interview questions
+
+If there is a console statement after the settimeout of 3 seconds, the console statement happens first and the code waits for 3 seconds and prints inside the data inside settimeout.
+JS waits for none.
+The callback inside settimeout forms a closures.
+settimeout stores the function somewhere and sets a timer to it. After the timer is expired the function is executed.
+If we write a setTimeout inside a for loop it prints the the last value in the loop. (i = 1 to 5, then prints 6)
+
+1. Reference to i is stored and not the value.
+2. Run the loop again and again, does not wait for the timer to expire. It reaches the endpoint the i value would be 6.
+3. Use let instead of var, let has a block scope (local scope of the variable). Everytime the loop runs a new i variable is created and its a new copy.
+4. If we have to use a var only then call the settimeout inside a function inside a for loop, like this we can make a new vaiable of i everytime.
