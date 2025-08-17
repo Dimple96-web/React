@@ -1223,3 +1223,55 @@ Diff algorithm - Finds the difference between 2 virtual DOMs (basically objects)
 React does efficient DOM manipulation, its why React is fast.
 
 # Ep - 06, Part - 01
+
+Monolithic Architecture
+Everything coupled inside a single service, like one big entity.
+One small change we have to build and deploy the entire project.
+
+Microservice Architecture
+Different services for different tasks. Seperation of concerns.
+We can have different tech stack for different services.
+They all communicate via APIs (Application Program Interface).
+
+# Ep - 06, Part - 02
+
+2 approches to fetch data from the backend.
+
+1. As soon our app loads we can make a API call and get the data, render it on the screen.
+2. As soon as the app loads we render the UI, make an API call and then re-render the page with the fetched data.
+
+2nd approch is better, as this gives us a better UX. We render so that page is not blank till we get the required data. It does not matter if we are render 2 times as React render cycle is faster.
+
+# Ep - 06, Part - 03
+
+useEffect hook - This will be called after the component renders. If we want to do something after the component renders then we need to write it inside the useEffect.
+This helps the 2nd point in the above topic.
+fetch is provided by the browsers.
+CORS Error - Our browser block us to call API from one origin to another origin.
+
+<pre>
+useEffect(() => {
+    fetchData();
+  }, []);
+
+const fetchData = async () => {
+  const data = await fetch(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  );
+  const swiggyData = await data.json();
+  setTopRated(
+    swiggyData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+  );
+};
+</pre>
+
+This is known as optional chaining.
+JavaScript’s optional chaining allows you to access deeply nested properties without throwing errors if any part is null or undefined.
+swiggyData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+?.restaurants
+
+# Ep - 06, Part - 04
+
+Till the page loads the the UI page is blank, how to imporve this.
+We can show the spinning loader.
+Show a fake page until the UI returns with the actual data. This is known as Shimmer UI.

@@ -134,3 +134,69 @@ If we write a setTimeout inside a for loop it prints the the last value in the l
 2. Run the loop again and again, does not wait for the timer to expire. It reaches the endpoint the i value would be 6.
 3. Use let instead of var, let has a block scope (local scope of the variable). Everytime the loop runs a new i variable is created and its a new copy.
 4. If we have to use a var only then call the settimeout inside a function inside a for loop, like this we can make a new vaiable of i everytime.
+
+# Crazy JS Interview Questions
+
+1. Briefy explain closures and explain with an example.
+   outer()() same as var data = outer(); data();
+   wherever the variable is it still have a closure.
+   even if make a varaible let it still has a closure
+2. Advantages of closures. Below points with example.
+   Data Hiding / Encapsulation
+   Stateful Functions
+   Function Factories
+   Callback Functions & Event Handlers
+   Avoid Global Scope Pollution
+   Reusable & Composable Logic
+3. Disadvantages of closures. Below points with example.
+   Over consumption of memory, can freeze the memory.
+
+# First class functions
+
+Function Statement
+Creating a function using function keyword is a function statement.
+
+<pre>
+function xyz(){}
+</pre>
+
+Function Expression
+Creating a function using function keyword and assign the same to a variable.
+The difference between function statement and function expression is hoisting. First one works fine and the second one gives error in case of hoisting.
+
+<pre>
+var b = function (){}
+</pre>
+
+Anonymous functions
+A function without a name.
+They dont have an identity. But function should always have an error (syntax error).
+Can be used where functions are used as values.
+Can be used as a function expression.
+
+<pre>
+function(){}
+</pre>
+
+Named Function Expression
+Same as function expression, but we give a name to the function that is assigned to the variable.
+Should be called as b()();
+
+<pre>
+var b = function xyz(){}
+</pre>
+
+Difference between parameters and arguments
+parameters - function statement contains this.
+arguments - when we call the function we pass arguments.
+
+First Class functions
+The ability to use functions as values in known as first class functions.
+We can pass function as an argument into another function.
+We can return anonymous function from a function.
+That is also known as First Class Citizens.
+
+Function Declaration
+Creating a function using function keyword is a function statement. It is same as Function statement.
+
+# Callback Functions in JS and Event Listeners
