@@ -200,3 +200,44 @@ Function Declaration
 Creating a function using function keyword is a function statement. It is same as Function statement.
 
 # Callback Functions in JS and Event Listeners
+
+1. What is callback functions in javascript
+   Take a function inside another function and that is known as callback function. Gives us the async feature in JS. JS is a sync and single threaded function. It does everything in an order with a single thread.
+   Example: setTimeout function
+2. Blocking the main thread
+   Call stach is a main thread. If something blocks the call stack then it is said to block the main thread. Always use the async operations.
+3. Power of callbacks
+   When we write the code we should not block the main thread. The processing of it might take a lot of time. Callback is used to solve this issue along with async operations.
+4. Deep about Event Listeners
+   Process some process if the event is occured. Automatically the callback will be called in the call stack.
+5. Closures demo with event listeners
+   Closures can be used for data hiding. This will be visible only to the event callback.
+6. Scope demo with event listeners
+   Inside the scope the closures (lexical environment) will be present
+7. Garbagge Collection and removeEventListeners
+   Event listeners are heavy. It forms closures. It does not free the variable automatically. Hence its important to remove them.
+
+# Asynchronous Javascript and Event loops
+
+Call stack does only 1 thing at a time.
+For any given code
+
+1. For a given code a "Global Execution stack" is created and this is added to the call stack.
+2. If a function is called and "Execution stack" is added to the call stack.
+3. Call stack executes what comes inside it, it does not wait for anything.
+4. What if we want to wait and execute, call stack does not do that (does not have a timer).
+5. Browser => JS Engine => Call Stack => Code executes inside here.
+6. Web APIs (Super power of the Browser). Can be accessed through window object in the browser.
+   1. setTimeout - not a part of JS
+   2. DOM API (document. provides access to the DOM APIs)
+   3. fetch
+   4. localStorage
+   5. console
+   6. Location
+7. Event loop and callback queue - When a setTimeout is called the callback is stored till in the Web API environment the timer executes. Till then if the Global execution context is removed then somehow we need add this call back to the call stack. When the timer expires the callback is added to the callback queue. Event loop keeps checking the callback queue. Event loop keeps monitoring the callstack and callback queue. If it finds something then event loop adds this callback to the callstack. Then the callback is run and do the processing. Why is callback queue is required - For callback to have a chance one after another, nothing is missed.
+8. Microtask queue - Higher priority then the callback queue. Fetch callbacks goes inside the microtask queue. Promises callback and mutation observer go to this queue.
+
+# JS Engine Exposed
+
+1. JS is everwhere
+   Due to its runtime environment
