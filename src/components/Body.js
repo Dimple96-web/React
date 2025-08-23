@@ -3,7 +3,9 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  let [topRated, setTopRated] = useState([]);
+  const [topRated, setTopRated] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [filteredSearch, setFilteredSearch] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -18,6 +20,10 @@ const Body = () => {
       swiggyData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
+    setFilteredSearch(
+      swiggyData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   };
   const handlerClickHandler = () => {
     const filteredResturants = topRated.filter((res) => {
@@ -25,18 +31,34 @@ const Body = () => {
     });
     setTopRated(filteredResturants);
   };
-  if (topRated.length === 0) {
-    return <Shimmer />;
-  }
-  return (
+
+  const searchHandler = () => {
+    const searchedResturants = topRated.filter((res) =>
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredSearch(searchedResturants);
+  };
+
+  return topRated.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button onClick={searchHandler}>Search</button>
+        </div>
         <button className="filter-btn" onClick={handlerClickHandler}>
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {topRated.map((rest) => (
+        {filteredSearch.map((rest) => (
           <RestaurantCard key={rest.info.id} responseData={rest} />
         ))}
       </div>

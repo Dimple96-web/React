@@ -1275,3 +1275,24 @@ swiggyData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
 Till the page loads the the UI page is blank, how to imporve this.
 We can show the spinning loader.
 Show a fake page until the UI returns with the actual data. This is known as Shimmer UI.
+
+# Ep - 06, Part - 05
+
+Based on a condition we render a component and its known as conditional rendering.
+We can use the ternary operator instead of if/else conditions.
+
+Why do we need state variables? Can't we use normal variables only.
+The value get updated if we dont use a useState, but the updated value won't be rendered on the screen (React won't know if the variable is updated). If we use useState then the value gets updated (state variables).
+When the state variable changes the useState (in React) will re-render the component.
+It re-renders the whole component(const variables won't give error as the function is called again newly) and not just the button.
+Old code and new code is compared and then the diff is found out, that is only the button has changed. This is know as the diff algorithm.
+
+# Ep - 06, Part - 06
+
+As the state variable searchText is bound to the input tag and the input tag is trying to change the searchText variable so we get the error (searchText should be in sync).So we need to change the values using a event handler.
+Whenever state variables update, React triggers a reconcilition cycle (re-renders the component).
+When we type something inside a input box for each word typed the the component is rendered newly (Comparision between original and virtual DOM). Thats why React is faster (reconcilition cycle).
+
+# Ep - 06, Part - 07
+
+If the search process is present then make 2 copies of the data so that when we search again the process happens on the actual data and not the copied data.
